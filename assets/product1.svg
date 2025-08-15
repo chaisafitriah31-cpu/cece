@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ffd1ec"/>
+      <stop offset="100%" stop-color="#e5ffb8"/>
+    </linearGradient>
+    <style>
+      .h1 { font: 800 62px 'Segoe UI', 'Inter', sans-serif; fill:#0b1211 }
+      .h2 { font: 600 28px 'Segoe UI', 'Inter', sans-serif; fill:#065f46 }
+    </style>
+  </defs>
+  <rect width="1200" height="800" fill="url(#bg)"/>
+  <g>
+    <circle cx="220" cy="200" r="120" fill="#fff" opacity=".22"/>
+    <circle cx="980" cy="600" r="160" fill="#fff" opacity=".18"/>
+    <rect x="120" y="300" rx="28" ry="28" width="960" height="360" fill="#fff" opacity=".22"/>
+  </g>
+  <g transform="translate(160,420)">
+    <text class="h1">Presidential Suite</text>
+    <text class="h2" y="78">Ocean view • Private Butler • 240 m²</text>
+  </g>
+</svg>

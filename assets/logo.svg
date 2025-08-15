@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="72" viewBox="0 0 240 72">
+  <defs>
+    <linearGradient id="gg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#ff1493"/>
+      <stop offset="100%" stop-color="#84cc16"/>
+    </linearGradient>
+    <style>
+      .w{ font: 800 28px 'Segoe UI', 'Inter', sans-serif; fill:#0b1211 }
+      .t{ font: 600 12px 'Segoe UI', 'Inter', sans-serif; fill:#065f46 }
+    </style>
+  </defs>
+  <rect rx="16" ry="16" width="240" height="72" fill="url(#gg)" opacity=".12"/>
+  <g transform="translate(16,18)">
+    <circle cx="20" cy="18" r="12" fill="#ff1493"/>
+    <circle cx="42" cy="8" r="6" fill="#84cc16"/>
+    <text x="60" y="16" class="w">The Hideaway</text>
+    <text x="60" y="34" class="t">Five-Star Boutique Hotel</text>
+  </g>
+</svg>

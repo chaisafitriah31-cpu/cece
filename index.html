@@ -1,98 +1,257 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="id">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Hotel Bintang Lima — Kesan Mewah untuk Anak</title>
-  <link rel="stylesheet" href="css/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>The Hideaway — Hotel Bintang Lima</title>
+  <meta name="description" content="The Hideaway — hotel bintang lima dengan desain modern, pelayanan butik, dan pengalaman tak terlupakan di Bali." />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="preload" as="image" href="assets/logo.svg" />
 </head>
 <body>
-  <header class="site-header">
-    <div class="brand"><img src="assets/mascot.svg" alt="mascot" class="mascot"/><div class="brand-text">Hotel <strong>Bintang Lima</strong></div></div>
-    <nav>
-      <button id="open-book" class="book-btn">Reservasi (<span id="book-count">0</span>)</button>
-    </nav>
+  <a class="skip" href="#main">Lewati ke konten</a>
+  <header class="header">
+    <div class="container row between center">
+      <img src="assets/logo.svg" alt="Logo The Hideaway" class="logo" width="240" height="72"/>
+      <nav class="nav">
+        <button class="nav-toggle" aria-expanded="false" aria-controls="menu">☰</button>
+        <ul id="menu" class="menu">
+          <li><a href="#hero">Beranda</a></li>
+          <li><a href="#best">Terlaris</a></li>
+          <li><a href="#testi">Testimoni</a></li>
+          <li><a href="#feedback">Kritik & Saran</a></li>
+          <li><a href="#contact">Kontak</a></li>
+          <li><button class="btn cart-open" type="button">Keranjang (<span id="cart-count">0</span>)</button></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-left">
-        <h1>Selamat datang di <strong>Hotel Bintang Lima</strong></h1>
-        <p>Hotel bintang lima khusus keluarga & anak — penuh warna, aman, dan penuh keceriaan.</p>
-        <a class="cta" href="#rooms">Lihat Kamar</a>
-        <div class="checkin-card">
-          <h3>Check-in Cepat</h3>
-          <form id="checkin-form">
-            <div class="row"><input type="text" id="gname" placeholder="Nama Tamu" required></div>
-            <div class="row"><input type="date" id="date-in" required></div>
-            <div class="row"><input type="date" id="date-out" required></div>
-            <div class="row"><select id="guests"><option value="1">1 tamu</option><option value="2">2 tamu</option><option value="3">3 tamu</option></select></div>
-            <button type="submit" class="btn-primary">Cek Ketersediaan</button>
-          </form>
+  <main id="main">
+    <!-- HERO -->
+    <section id="hero" class="hero">
+      <div class="container grid hero-grid">
+        <div class="hero-copy">
+          <h1>Stay in Style at <span>The Hideaway</span></h1>
+          <p>Hotel bintang lima bergaya butik di jantung Bali dengan pemandangan menakjubkan dan pelayanan personal.</p>
+          <div class="cta">
+            <a class="btn" href="#best">Lihat Terlaris</a>
+            <a class="btn ghost" href="#contact">Lokasi</a>
+          </div>
+        </div>
+        <div class="hero-art" aria-hidden="true">
+          <div class="blob b1"></div>
+          <div class="blob b2"></div>
+          <div class="blob b3"></div>
         </div>
       </div>
-      <div class="hero-right">
-        <div class="slider" id="slider">
-          <div class="slides">
-            <div class="slide" style="background-image:url('assets/slide1.svg')"></div>
-            <div class="slide" style="background-image:url('assets/slide2.svg')"></div>
-            <div class="slide" style="background-image:url('assets/slide3.svg')"></div>
+      <div class="scroll">↓</div>
+    </section>
+
+    <!-- BEST SELLER SLIDER (MAX 5) -->
+    <section id="best" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Produk Terlaris</h2>
+          <p>Pilihan kamar & paket favorit — maksimal 5 item.</p>
+        </header>
+        <div class="slider" data-autoplay="true" data-interval="4200">
+          <button class="slider-btn prev" aria-label="Sebelumnya">‹</button>
+          <div class="slider-track" role="region" aria-roledescription="carousel" aria-label="Slider Terlaris" tabindex="0">
+            <!-- Slide 1 -->
+            <article class="slide" data-id="1" data-name="Presidential Suite" data-price="15000000">
+              <img src="assets/product1.svg" alt="Presidential Suite" width="1200" height="800" loading="lazy"/>
+              <div class="slide-info">
+                <h3>Presidential Suite</h3>
+                <p>Ocean view • Private Butler • 240 m²</p>
+                <div class="price">Rp 15.000.000 / malam</div>
+                <div class="actions">
+                  <button class="btn sm add-to-cart">Tambahkan ke Pesanan</button>
+                  <button class="btn sm ghost checkout-now">Checkout</button>
+                </div>
+              </div>
+            </article>
+            <!-- Slide 2 -->
+            <article class="slide" data-id="2" data-name="Skyline Penthouse" data-price="12000000">
+              <img src="assets/product2.svg" alt="Skyline Penthouse" width="1200" height="800" loading="lazy"/>
+              <div class="slide-info">
+                <h3>Skyline Penthouse</h3>
+                <p>Rooftop Jacuzzi • City Panorama</p>
+                <div class="price">Rp 12.000.000 / malam</div>
+                <div class="actions">
+                  <button class="btn sm add-to-cart">Tambahkan ke Pesanan</button>
+                  <button class="btn sm ghost checkout-now">Checkout</button>
+                </div>
+              </div>
+            </article>
+            <!-- Slide 3 -->
+            <article class="slide" data-id="3" data-name="Garden Villa" data-price="9000000">
+              <img src="assets/product3.svg" alt="Garden Villa" width="1200" height="800" loading="lazy"/>
+              <div class="slide-info">
+                <h3>Garden Villa</h3>
+                <p>Private Pool • Courtyard</p>
+                <div class="price">Rp 9.000.000 / malam</div>
+                <div class="actions">
+                  <button class="btn sm add-to-cart">Tambahkan ke Pesanan</button>
+                  <button class="btn sm ghost checkout-now">Checkout</button>
+                </div>
+              </div>
+            </article>
+            <!-- Slide 4 -->
+            <article class="slide" data-id="4" data-name="Hideaway Deluxe" data-price="6000000">
+              <img src="assets/product4.svg" alt="Hideaway Deluxe" width="1200" height="800" loading="lazy"/>
+              <div class="slide-info">
+                <h3>Hideaway Deluxe</h3>
+                <p>King Bed • Rain Shower</p>
+                <div class="price">Rp 6.000.000 / malam</div>
+                <div class="actions">
+                  <button class="btn sm add-to-cart">Tambahkan ke Pesanan</button>
+                  <button class="btn sm ghost checkout-now">Checkout</button>
+                </div>
+              </div>
+            </article>
+            <!-- Slide 5 -->
+            <article class="slide" data-id="5" data-name="Serenity Twin" data-price="4500000">
+              <img src="assets/product5.svg" alt="Serenity Twin" width="1200" height="800" loading="lazy"/>
+              <div class="slide-info">
+                <h3>Serenity Twin</h3>
+                <p>Family Friendly • 48 m²</p>
+                <div class="price">Rp 4.500.000 / malam</div>
+                <div class="actions">
+                  <button class="btn sm add-to-cart">Tambahkan ke Pesanan</button>
+                  <button class="btn sm ghost checkout-now">Checkout</button>
+                </div>
+              </div>
+            </article>
           </div>
-          <div class="slider-controls">
-            <button id="prev">‹</button>
-            <button id="next">›</button>
-          </div>
+          <button class="slider-btn next" aria-label="Selanjutnya">›</button>
+          <div class="dots" aria-hidden="true"></div>
         </div>
       </div>
     </section>
 
-    <section id="rooms" class="rooms">
-      <h2>Pilih Kamar</h2>
-      <div class="products" id="products"></div>
+    <!-- TESTIMONIALS -->
+    <section id="testi" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Testimoni Pelanggan</h2>
+          <p>Suara asli dari tamu kami.</p>
+        </header>
+        <ul id="testi-list" class="testi-list">
+          <!-- Testimoni statis awal -->
+          <li class="testi-item">
+            <blockquote>“Pelayanan super ramah dan kamarnya sangat bersih. Pasti balik lagi!”</blockquote>
+            <div class="meta">— Ayu, Jakarta</div>
+          </li>
+          <li class="testi-item">
+            <blockquote>“Pemandangan sunset dari penthouse bener-bener bikin speechless.”</blockquote>
+            <div class="meta">— Bima, Bandung</div>
+          </li>
+        </ul>
+
+        <form id="testi-form" class="card" autocomplete="on">
+          <h3>Tambah Testimoni</h3>
+          <div class="grid form-grid">
+            <label>Nama
+              <input name="name" type="text" required placeholder="Nama kamu"/>
+            </label>
+            <label>Kota
+              <input name="city" type="text" required placeholder="Kota asal"/>
+            </label>
+          </div>
+          <label>Pesan
+            <textarea name="message" rows="3" required placeholder="Tulis pengalaman kamu di sini..."></textarea>
+          </label>
+          <button class="btn" type="submit">Kirim Testimoni</button>
+          <p class="note" id="testi-note" role="status" aria-live="polite"></p>
+        </form>
+      </div>
     </section>
 
-    <section class="about">
-      <h2>Tentang Hotel Bintang Lima</h2>
-      <p>Kami menyediakan pengalaman menginap ramah anak dengan dekorasi menyenangkan, aktivitas bintang lima, dan layanan yang hangat.</p>
+    <!-- FEEDBACK -->
+    <section id="feedback" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Kritik & Saran</h2>
+          <p>Sampaikan masukanmu agar kami bisa lebih baik.</p>
+        </header>
+        <form id="feedback-form" class="card" autocomplete="on">
+          <div class="grid form-grid">
+            <label>Nama
+              <input name="name" type="text" placeholder="Opsional"/>
+            </label>
+            <label>Email
+              <input name="email" type="email" placeholder="nama@email.com"/>
+            </label>
+          </div>
+          <label>Kategori
+            <select name="category" required>
+              <option value="">Pilih...</option>
+              <option>Pelayanan</option>
+              <option>Kamar</option>
+              <option>Makanan</option>
+              <option>Lainnya</option>
+            </select>
+          </label>
+          <label>Pesan
+            <textarea name="message" rows="4" required placeholder="Tulis kritik/saranmu..."></textarea>
+          </label>
+          <button class="btn" type="submit">Kirim</button>
+          <p class="note" id="fb-note" role="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="section">
+      <div class="container">
+        <header class="section-head">
+          <h2>Kontak & Lokasi</h2>
+          <p class="muted">Alamat: <strong>Jl. Teuku Umar / Bali</strong></p>
+        </header>
+        <div class="card">
+          <p>Email: hello@thehideaway.example • Tel: +62 812-3456-7890</p>
+          <p>Buka 24/7 • Parkir valet tersedia</p>
+        </div>
+      </div>
     </section>
   </main>
 
-  <aside id="book-panel" class="book-panel hidden">
-    <div class="book-header">
-      <h3>Reservasimu</h3>
-      <button id="close-book">✕</button>
+  <footer class="footer">
+    <div class="container row between center">
+      <small>© <span id="year"></span> The Hideaway</small>
+      <button class="btn cart-open" type="button">Buka Keranjang (<span id="cart-count-2">0</span>)</button>
     </div>
-    <div id="book-items" class="book-items"></div>
-    <div class="book-footer">
-      <div class="total">Total: <span id="book-total">Rp0</span></div>
-      <button id="checkout-btn" class="checkout">Checkout</button>
-    </div>
-  </aside>
-
-  <div id="checkout-modal" class="modal hidden">
-    <div class="modal-content">
-      <button class="modal-close" id="close-checkout">✕</button>
-      <h3>Checkout Reservasi</h3>
-      <div id="checkout-summary"></div>
-      <form id="checkout-form">
-        <label>Nama Pelanggan
-          <input type="text" id="cust-name" required />
-        </label>
-        <label>No. HP
-          <input type="tel" id="cust-phone" required />
-        </label>
-        <label>Catatan (opsional)
-          <textarea id="cust-note" rows="2"></textarea>
-        </label>
-        <button type="submit" class="pay-btn">Selesaikan Reservasi (Simulasi)</button>
-      </form>
-    </div>
-  </div>
-
-  <footer class="site-footer">
-    <p>&copy; <span id="year"></span> Hotel Bintang Lima — Ceria untuk Anak.</p>
   </footer>
 
-  <script src="js/app.js"></script>
+  <!-- CART DRAWER -->
+  <aside id="cart" class="cart" aria-hidden="true" aria-labelledby="cart-title">
+    <div class="cart-inner">
+      <header class="cart-head">
+        <h3 id="cart-title">Pesanan Kamu</h3>
+        <button class="cart-close" aria-label="Tutup">×</button>
+      </header>
+      <ul id="cart-items" class="cart-items"></ul>
+      <div class="cart-foot">
+        <div class="total">Total: <span id="cart-total">Rp 0</span></div>
+        <div class="grid form-grid compact">
+          <label>Check-in
+            <input id="ci" type="date"/>
+          </label>
+          <label>Check-out
+            <input id="co" type="date"/>
+          </label>
+          <label>Tamu
+            <input id="guests" type="number" min="1" value="2"/>
+          </label>
+        </div>
+        <button id="checkout" class="btn full">Checkout via WhatsApp</button>
+        <p class="note muted">Checkout akan membuka WhatsApp dengan ringkasan pesanan.</p>
+      </div>
+    </div>
+    <div class="cart-backdrop cart-close" aria-hidden="true"></div>
+  </aside>
+
+  <script src="script.js"></script>
 </body>
 </html>
