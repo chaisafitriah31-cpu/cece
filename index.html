@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hotel Bintang Lima — Kesan Mewah untuk Anak</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="brand"><img src="assets/mascot.svg" alt="mascot" class="mascot"/><div class="brand-text">Hotel <strong>Bintang Lima</strong></div></div>
+    <nav>
+      <button id="open-book" class="book-btn">Reservasi (<span id="book-count">0</span>)</button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-left">
+        <h1>Selamat datang di <strong>Hotel Bintang Lima</strong></h1>
+        <p>Hotel bintang lima khusus keluarga & anak — penuh warna, aman, dan penuh keceriaan.</p>
+        <a class="cta" href="#rooms">Lihat Kamar</a>
+        <div class="checkin-card">
+          <h3>Check-in Cepat</h3>
+          <form id="checkin-form">
+            <div class="row"><input type="text" id="gname" placeholder="Nama Tamu" required></div>
+            <div class="row"><input type="date" id="date-in" required></div>
+            <div class="row"><input type="date" id="date-out" required></div>
+            <div class="row"><select id="guests"><option value="1">1 tamu</option><option value="2">2 tamu</option><option value="3">3 tamu</option></select></div>
+            <button type="submit" class="btn-primary">Cek Ketersediaan</button>
+          </form>
+        </div>
+      </div>
+      <div class="hero-right">
+        <div class="slider" id="slider">
+          <div class="slides">
+            <div class="slide" style="background-image:url('assets/slide1.svg')"></div>
+            <div class="slide" style="background-image:url('assets/slide2.svg')"></div>
+            <div class="slide" style="background-image:url('assets/slide3.svg')"></div>
+          </div>
+          <div class="slider-controls">
+            <button id="prev">‹</button>
+            <button id="next">›</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="rooms" class="rooms">
+      <h2>Pilih Kamar</h2>
+      <div class="products" id="products"></div>
+    </section>
+
+    <section class="about">
+      <h2>Tentang Hotel Bintang Lima</h2>
+      <p>Kami menyediakan pengalaman menginap ramah anak dengan dekorasi menyenangkan, aktivitas bintang lima, dan layanan yang hangat.</p>
+    </section>
+  </main>
+
+  <aside id="book-panel" class="book-panel hidden">
+    <div class="book-header">
+      <h3>Reservasimu</h3>
+      <button id="close-book">✕</button>
+    </div>
+    <div id="book-items" class="book-items"></div>
+    <div class="book-footer">
+      <div class="total">Total: <span id="book-total">Rp0</span></div>
+      <button id="checkout-btn" class="checkout">Checkout</button>
+    </div>
+  </aside>
+
+  <div id="checkout-modal" class="modal hidden">
+    <div class="modal-content">
+      <button class="modal-close" id="close-checkout">✕</button>
+      <h3>Checkout Reservasi</h3>
+      <div id="checkout-summary"></div>
+      <form id="checkout-form">
+        <label>Nama Pelanggan
+          <input type="text" id="cust-name" required />
+        </label>
+        <label>No. HP
+          <input type="tel" id="cust-phone" required />
+        </label>
+        <label>Catatan (opsional)
+          <textarea id="cust-note" rows="2"></textarea>
+        </label>
+        <button type="submit" class="pay-btn">Selesaikan Reservasi (Simulasi)</button>
+      </form>
+    </div>
+  </div>
+
+  <footer class="site-footer">
+    <p>&copy; <span id="year"></span> Hotel Bintang Lima — Ceria untuk Anak.</p>
+  </footer>
+
+  <script src="js/app.js"></script>
+</body>
+</html>
